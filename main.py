@@ -25,8 +25,17 @@ else:
 print '======================================='
 print 'BEGIN ADDING AND CHANGING THE INSTALLER'
 
-# Adding the Linux Mint installer
+# Adding the Linux Mint installer, grub-pc
 os.system('apt-get install -y mint-debian-installer')
+
+# mint-debian-installer files:
+# /etc/skel/Desktop/mint-debian-installer.desktop
+# /usr/bin/mint-debian-installer
+# /usr/lib/linuxmint/mint-debian-installer/icon.png
+# /usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.glade
+# /usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.py
+# /usr/lib/linuxmint/mint-debian-installer/version.py
+# /usr/share/applications/mint-debian-installer.desktop
 
 print 'FINISHED ADDING AND CHANGING THE INSTALLER'
 print '=========================================='
