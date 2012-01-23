@@ -28,6 +28,7 @@ print 'BEGIN ADDING AND CHANGING THE INSTALLER'
 
 # Adding the Linux Mint installer, grub-pc
 os.system('apt-get install -y mint-debian-installer')
+os.system('') # Automatically clicks on OK.  Without this command, you would have to do this manually.
 
 # mint-debian-installer files:
 # /etc/skel/Desktop/mint-debian-installer.desktop
