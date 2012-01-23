@@ -22,6 +22,7 @@ else:
 # Everything up to this point is common to all Python scripts called by shared-*.sh
 # =================================================================================
 
+import shutil
 print '======================================='
 print 'BEGIN ADDING AND CHANGING THE INSTALLER'
 
@@ -31,11 +32,24 @@ os.system('apt-get install -y mint-debian-installer')
 # mint-debian-installer files:
 # /etc/skel/Desktop/mint-debian-installer.desktop
 # /usr/bin/mint-debian-installer
-# /usr/lib/linuxmint/mint-debian-installer/icon.png
-# /usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.glade
-# /usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.py
+# /usr/lib/linuxmint/mint-debian-installer/icon.png (change)
+# /usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.glade (change)
+# /usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.py (change)
 # /usr/lib/linuxmint/mint-debian-installer/version.py
 # /usr/share/applications/mint-debian-installer.desktop
+
+src = dir_develop + '/installer/mint-debian-installer/icon.png'
+dest = '/usr/lib/linuxmint/mint-debian-installer/icon.png'
+shutil.copyfile (src, dest)
+
+src = dir_develop + '/installer/mint-debian-installer/mint-debian-installer.glade'
+dest = '/usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.glade'
+shutil.copyfile (src, dest)
+
+src = dir_develop + '/installer/mint-debian-installer/mint-debian-installer.py'
+dest = '/usr/lib/linuxmint/mint-debian-installer/mint-debian-installer.py'
+shutil.copyfile (src, dest)
+
 
 print 'FINISHED ADDING AND CHANGING THE INSTALLER'
 print '=========================================='
